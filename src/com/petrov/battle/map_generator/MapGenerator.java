@@ -51,7 +51,7 @@ public class MapGenerator implements MapCreator {
             for (int i = 0; i < array.length; i++) {
                 var shipType = selectShip();
 
-                if (totalShipCount == -1) {
+                if (totalShipCount == ShipsType.None.getShipNumber) {
                     isDo = false;
                     break;
                 }
@@ -84,9 +84,8 @@ public class MapGenerator implements MapCreator {
         var shipType = ShipsType.None;
 
         int availableToCreate = checkShipCounterIsEmpty();
-        int noShips = -1;
 
-        if (availableToCreate == noShips) {
+        if (availableToCreate == ShipsType.None.getShipNumber) {
 
             totalShipCount = availableToCreate;
             return shipType;
